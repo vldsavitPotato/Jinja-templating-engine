@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+		
+        {% macro get_sum(varargs) %}
+        {% set sum = 0 %}
+        {% for arg in varargs %}
+            {% set sum = sum + arg %}
+        {% endfor %}
+        <p>{{ sum }}</p>
+        {% endmacro %}
+
+        {{ get_sum([1, 2, 3, 4]) }}
+    
+	</body>
+</html>
