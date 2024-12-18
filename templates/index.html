@@ -1,33 +1,18 @@
+{% from 'macros.html' import cake %}
+
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>{{ title }}</title>
-    </head>
-    <body>
-        
-        {% macro get_sum(varargs) %}
-        {% set sum = 0 %}
-        {% for arg in varargs %}
-            {% set sum = sum + arg %}
-        {% endfor %}
-        <p>{{ sum }}</p>
-        {% endmacro %}
-
-
-        {% macro get_factorial_recursive(n) %}
-            {% if n <= 1 %}
-                1
-            {% else %}
-                {{ n * get_factorial_recursive(n - 1) | int }}
-            {% endif %}
-        {% endmacro %}
-
-        {{ 5 }}! = {{ get_factorial_recursive(5) }}
-        
-    </body>
+<html>
+<head>
+  <title>Cake Recipe</title>
+</head>
+<body>
+  <h1>Welcome to the Cake Recipe!</h1>
+  
+  {{ cake(['Flour', 'Eggs', 'Sugar', 'Butter', 'Vanilla']) }}
+  
+  <p>Автор: Someone</p>
+</body>
 </html>
-
 
 
 
